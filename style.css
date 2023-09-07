@@ -40,7 +40,6 @@ main{
 }
 
 .title-checkbox-container{
-    border:2px solid red;
     background-color: #FCFCFC;
     padding-left:30px;
     padding-right:30px;
@@ -58,7 +57,7 @@ main{
     color: rgb(68, 64, 64);
 }
 
-button{
+#submit-btn{
     height:50px;
     width:80px;
     background-color:#79CAC3 ;
@@ -69,7 +68,7 @@ button{
     border-radius:5px;
 }
 
-button:active{
+#submit-btn:active{
 border:2px solid rgb(105, 134, 134)
 }
 
@@ -91,3 +90,38 @@ input[type=textbox]{
     box-shadow:1px 1px 5px #000000;
 
 }
+
+.invitees-container{
+    /* border:2px solid red; */
+    background-color: #FCFCFC;
+    display:grid;
+    grid-template-columns: repeat( auto-fit, minmax(150px, 360px) );
+    grid-gap: 96px; 
+
+    
+}
+.card-container{
+    height:120px;
+    display:flex;
+    flex-direction: column;
+    gap:5px;
+    font-size: 20px;
+    padding:10px;
+    box-shadow:1px 1px 5px #000000;
+}
+
+.change-buttons{
+    color:#FFF;
+    margin:5px;
+    background-color:#57B8CB;
+    border:none;
+    border-radius:5px;
+    height: 25px;
+    margin-top:10px;
+    
+}
+
+.change-buttons:active{
+    border:1px solid black
+}
+
