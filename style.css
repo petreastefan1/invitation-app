@@ -2,11 +2,13 @@
     box-sizing: border-box;
     margin:0px
 }
+body{
+    background-color: rgb(247, 253, 243);
+}
 
 main{
     display:flex;
     justify-content: center;
-    background-color: rgb(247, 253, 243);
 }
 
 .page-container{
@@ -14,6 +16,7 @@ main{
     width:50%;
     box-shadow:1px 1px 5px #000000;
     border-radius: 10px;
+    background-color: #FFF;;
 }  
 
 .top-colour{
@@ -72,7 +75,7 @@ main{
 border:2px solid rgb(105, 134, 134)
 }
 
-input[type=textbox]{
+#name-inpt{
     height:50px;
     width:350px;
     border:none;
@@ -93,7 +96,7 @@ input[type=textbox]{
 
 .invitees-container{
     /* border:2px solid red; */
-    background-color: #FCFCFC;
+    background-color: #FFF;
     display:grid;
     grid-template-columns: repeat( auto-fit, minmax(150px, 360px) );
     grid-gap: 96px; 
@@ -108,6 +111,7 @@ input[type=textbox]{
     font-size: 20px;
     padding:10px;
     box-shadow:1px 1px 5px #000000;
+    background-color: #FCFCFC;
 }
 
 .change-buttons{

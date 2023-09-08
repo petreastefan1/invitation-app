@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
-<header>
-</header>
 
-<main>
+    <header>
+    </header>
 
-    <section class="page-container">
-        <div class="top-colour">
-            <h1>RSVP</h1>
-            <p>My school app</p>
-        </div>
-        <div  class="title-checkbox-container" >
-            <div class="invitees-title">
-                <p>Invitees</p>
+    <main>
+
+        <section class="page-container">
+            <div class="header-container">
+                <div class="top-colour">
+                    <h1>RSVP</h1>
+                    <p>My school app</p>
+                </div>
+                <div class="title-checkbox-container">
+                    <div class="invitees-title">
+                        <p>Invitees</p>
+                    </div>
+                    <div class="hide-checkbox">
+                        <label for="hide-box">Hide those who haven't responded</label>
+                        <input type="checkbox" id="hide-box">
+                    </div>
+                </div>
+                <div class="search-container">
+                    <input type="textbox" placeholder="Invite someone" id="name-inpt">
+                    <button id="submit-btn">Submit</button>
+
+                </div>
             </div>
-            <div class="hide-checkbox">
-                <label for="hide-box">Hide those who haven't responded</label>
-                <input type="checkbox" id="hide-box">
-            </div>
-        </div>
-        <div class="search-container">
-            <input type="textbox" placeholder="Invite someone" id="name-inpt">
-            <button id="submit-btn">Submit</button>
+            <section class="invitees-container">
 
-        </div>
 
-        <section class="invitees-container">
+
+            </section>
+
 
 
 
@@ -45,18 +53,13 @@
 
 
 
-    </section>
 
 
 
 
 
 
-
-
-
-
-</main>
+    </main>
 
 
 
@@ -70,12 +73,13 @@
 
 
 
-<footer>
-</footer>
+    <footer>
+    </footer>
 
 
 
 
     <script src="app.js"></script>
 </body>
+
 </html>
