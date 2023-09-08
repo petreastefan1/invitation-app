@@ -1,6 +1,6 @@
-const  pageContainer=document.querySelector(".page-container")
+const pageContainer = document.querySelector(".page-container")
 const submitBtn = document.getElementById("submit-btn")
-const nameInpt= document.getElementById("name-inpt")
+const nameInpt = document.getElementById("name-inpt")
 const invContainer = document.querySelector(".invitees-container")
 const headerContainer = pageContainer.firstChild;
 const hidebtn = document.getElementById("hide-box")
@@ -8,40 +8,40 @@ const hidebtn = document.getElementById("hide-box")
 
 
 
-function createCard(name){
+function createCard(name) {
     const cardContainer = document.createElement("div");
-    cardContainer.className="card-container";
+    cardContainer.className = "card-container";
     const invName = document.createElement("p");
     invName.textContent = name;
-    cardContainer.className += " " +name
+    cardContainer.className += " " + name
     cardContainer.append(invName);
-    
+
     const confirmedContainer = document.createElement("div");
-    confirmedContainer.className="confirmed-container";
+    confirmedContainer.className = "confirmed-container";
 
     const checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
-    checkbox.setAttribute("id","confirmed-box");
+    checkbox.setAttribute("id", "confirmed-box");
 
-    const confirmedLabel=document.createElement("label");
-    confirmedLabel.textContent="Confirmed";
-    confirmedLabel.setAttribute("for","confirmed-box");
+    const confirmedLabel = document.createElement("label");
+    confirmedLabel.textContent = "Confirmed";
+    confirmedLabel.setAttribute("for", "confirmed-box");
 
     confirmedContainer.append(confirmedLabel);
     confirmedContainer.append(checkbox);
     cardContainer.append(confirmedContainer);
 
     const cardBtns = document.createElement("div");
-    cardBtns.className="card-buttons";
+    cardBtns.className = "card-buttons";
     const editBtn = document.createElement("button");
     const removeBtn = document.createElement("button");
 
     editBtn.textContent = "Edit";
-    removeBtn.textContent="Remove";
+    removeBtn.textContent = "Remove";
 
     editBtn.className = "change-buttons";
     editBtn.className += " edit-btn"
-    removeBtn.className="change-buttons";
+    removeBtn.className = "change-buttons";
     removeBtn.className += " remove-btn"
 
     cardBtns.append(editBtn);
@@ -54,25 +54,25 @@ function createCard(name){
 
 
 
-invContainer.addEventListener("click",(e)=>{
-    let obj= e.target;
-    let classes=obj.classList;
-    let card=obj.parentNode.parentNode;
-    if(classes.contains("edit-btn")){
+invContainer.addEventListener("click", (e) => {
+    let obj = e.target;
+    let classes = obj.classList;
+    let card = obj.parentNode.parentNode;
+    if (classes.contains("edit-btn")) {
 
 
 
-        let para=card.firstChild;
+        let para = card.firstChild;
 
 
 
-        let inpt=document.createElement("input");
+        let inpt = document.createElement("input");
 
-        inpt.type="text";
-        inpt.value=para.textContent;
+        inpt.type = "text";
+        inpt.value = para.textContent;
 
 
-        card.insertBefore(inpt,para);
+        card.insertBefore(inpt, para);
 
 
         card.removeChild(para);
@@ -81,10 +81,10 @@ invContainer.addEventListener("click",(e)=>{
 
         obj.classList.add("save-btn");
 
-        obj.textContent="Save";
-        
+        obj.textContent = "Save";
 
-    }else if(classes.contains("save-btn")){
+
+    } else if (classes.contains("save-btn")) {
 
         console.log(card)
 
@@ -96,7 +96,7 @@ invContainer.addEventListener("click",(e)=>{
 
         para.textContent = `${inpt.value}`
 
-        card.insertBefore(para,inpt);
+        card.insertBefore(para, inpt);
 
         card.removeChild(inpt)
 
@@ -105,40 +105,81 @@ invContainer.addEventListener("click",(e)=>{
         obj.classList.remove("save-btn");
 
         obj.classList.add("edit-btn");
-        obj.textContent="Edit"
+        obj.textContent = "Edit"
     }
 
-    if(classes.contains("remove-btn")){
+    if (classes.contains("remove-btn")) {
 
         invContainer.removeChild(card)
 
     }
 
-   
+
 
 })
 
 
-submitBtn.addEventListener("click",()=>{
+submitBtn.addEventListener("click", () => {
 
     const newInvitee = createCard(nameInpt.value);
     invContainer.append(newInvitee)
-    
+
 
 
 })
 
 
-hidebtn.addEventListener("click",()=>{
+hidebtn.addEventListener("click", () => {
 
-    let confirmed= document.getElementsByClassName("confirmed-container")
-    let x =Array.from(confirmed)
-    x.forEach((element)=>{
-        console.log(element.lastElementChild.checked)
+    if(hidebtn.checked){
+        hide()
+    }
+    else{
+        show()
+    }
+
+})
+
+
+function hide() {
+
+
+    let cards = document.querySelector(".invitees-container").children;
+
+
+
+
+    Array.from(cards).forEach((card) => {
+        let chk = card.querySelector("#confirmed-box");
+
+
+        if (!chk.checked) {
+
+            card.classList.add("hide");
+
+        }
+
+
+
 
     })
+}
+
+function show() {
+
+
+    let cards = document.querySelector(".invitees-container").children;
 
 
 
 
-})
+    Array.from(cards).forEach((card) => {
+
+
+        card.classList.remove("hide");
+
+
+
+
+    })
+}

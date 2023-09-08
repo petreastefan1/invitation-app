@@ -129,3 +129,13 @@ border:2px solid rgb(105, 134, 134)
     border:1px solid black
 }
 
+.hide{
+
+    display: none;
+}
+
+
+.show{
+
+    display: flex;
+}
